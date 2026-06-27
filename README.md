@@ -34,6 +34,19 @@ python -m http.server 4178
 # visit http://localhost:4178
 ```
 
+## Contact form (Web3Forms)
+
+The "Get in Touch" form posts to [Web3Forms](https://web3forms.com/). To activate it,
+get a free access key (enter your destination email at web3forms.com) and replace the
+placeholder in `index.html`:
+
+```html
+<input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+```
+
+Submissions are then emailed to the address tied to that key. A honeypot field guards
+against spam, and the form shows inline loading / success / error states.
+
 ## Assets
 - `assets/banner.png` — header banner
 - `assets/logo.jpeg` — full brand logo

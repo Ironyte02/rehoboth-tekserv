@@ -259,13 +259,46 @@ section{position:relative}
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:.82rem;color:#7e98ba;flex-wrap:wrap;gap:10px}
 .foot-bottom .tag{font-family:'Montserrat';font-style:italic;color:var(--gold-light)}
 
+/* ============ CONTACT FORM ============ */
+.contact{background:linear-gradient(180deg,#ffffff,#eef4fb)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:start}
+.contact-info h3{font-size:1.5rem;color:var(--navy-900);margin-bottom:14px;font-family:'Montserrat'}
+.contact-info p{color:var(--muted);font-size:1.02rem;margin-bottom:28px;max-width:440px}
+.cinfo{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+.cinfo .ci{flex:none;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--navy-700),var(--navy-900));color:var(--gold-light);box-shadow:0 8px 20px rgba(12,31,71,.18)}
+.cinfo .ci svg{width:22px;height:22px}
+.cinfo b{display:block;color:var(--navy-900);font-family:'Montserrat';font-size:.95rem;margin-bottom:2px}
+.cinfo span,.cinfo a{color:var(--muted);font-size:.92rem}
+.cinfo a:hover{color:var(--gold-deep)}
+.form-card{background:#fff;border:1px solid #e2ecf7;border-radius:20px;padding:34px;box-shadow:var(--shadow)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:18px}
+.field label{display:block;font-family:'Montserrat';font-weight:600;font-size:.82rem;color:var(--navy-800);margin-bottom:7px}
+.field label .req{color:#d64545}
+.field input,.field select,.field textarea{
+  width:100%;padding:12px 14px;border:1.5px solid #d8e3f1;border-radius:10px;
+  font-family:'Inter';font-size:.95rem;color:var(--ink);background:#fbfdff;
+  transition:border-color .2s,box-shadow .2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--sea);box-shadow:0 0 0 3px rgba(47,121,197,.15)}
+.field textarea{resize:vertical;min-height:120px}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-btn{width:100%;justify-content:center;font-size:1rem;padding:14px}
+.btn[disabled]{opacity:.6;cursor:not-allowed;transform:none!important}
+.spin-ic{animation:spin 1s linear infinite}
+.form-status{margin-top:16px;padding:13px 16px;border-radius:10px;font-size:.92rem;font-weight:600;display:none}
+.form-status.show{display:block}
+.form-status.ok{background:#e7f6ec;color:#1c7a3e;border:1px solid #bfe6cd}
+.form-status.err{background:#fdeaea;color:#b4292d;border:1px solid #f3c9ca}
+.form-note{font-size:.8rem;color:var(--muted);margin-top:12px;text-align:center}
+
 /* ============ RESPONSIVE ============ */
 @media(max-width:1024px){
   .hero-grid{grid-template-columns:1fr;padding-top:130px;padding-bottom:240px}
   .scene{display:none}
   .caps-row{grid-template-columns:repeat(4,1fr);gap:14px}
   .cap{border-right:none}
-  .about-grid,.why-grid{grid-template-columns:1fr;gap:40px}
+  .about-grid,.why-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
   .svc-grid{grid-template-columns:repeat(2,1fr)}
   .ind-grid{grid-template-columns:repeat(3,1fr)}
   .foot-grid{grid-template-columns:1fr 1fr}
@@ -282,6 +315,9 @@ section{position:relative}
   .about-list{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:32px}
+  .form-row{grid-template-columns:1fr}
+  .form-card{padding:24px}
   .cta-band{padding:46px 24px}
   .sec{padding:80px 0}
 }
@@ -451,8 +487,88 @@ section{position:relative}
   </div>
 </section>
 
-<!-- ============ FOOTER / CONTACT ============ -->
-<footer class="footer" id="contact">
+<!-- ============ CONTACT FORM ============ -->
+<section class="sec contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Get in Touch</span>
+      <h2>Let's Talk About Your <span class="gold">Project</span></h2>
+      <p>Tell us about your vessel, site or upcoming project — our team will get back to you within one business day.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Reach our team</h3>
+        <p>From inspection and testing to commissioning, compliance and technical manpower — wherever you operate, we're ready to support.</p>
+        <div class="cinfo">
+          <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg></div>
+          <div><b>Email</b><a href="mailto:info@rehobothtekserv.com">info@rehobothtekserv.com</a></div>
+        </div>
+        <div class="cinfo">
+          <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div>
+          <div><b>Phone</b><a href="tel:+919444842052">+91 94448 42052</a> &middot; <a href="tel:+919940197661">+91 99401 97661</a></div>
+        </div>
+        <div class="cinfo">
+          <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div>
+          <div><b>Coverage</b><span>Available globally — manpower deployed wherever you operate.</span></div>
+        </div>
+      </div>
+
+      <form class="form-card reveal" id="contactForm" novalidate>
+        <!-- Web3Forms -->
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+        <input type="hidden" name="subject" value="New enquiry from Rehoboth Tekserv website" />
+        <input type="hidden" name="from_name" value="Rehoboth Tekserv Website" />
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <div class="form-row">
+          <div class="field">
+            <label for="cf-name">Name <span class="req">*</span></label>
+            <input id="cf-name" name="name" type="text" required autocomplete="name" placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label for="cf-email">Email <span class="req">*</span></label>
+            <input id="cf-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="cf-phone">Phone</label>
+            <input id="cf-phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 …" />
+          </div>
+          <div class="field">
+            <label for="cf-service">Service of interest</label>
+            <select id="cf-service" name="service">
+              <option value="" selected>Select a service…</option>
+              <option>Marine Electrical Inspection &amp; Troubleshooting</option>
+              <option>Hazardous Area (Ex) Inspection</option>
+              <option>BWTS Service &amp; Compliance</option>
+              <option>Marine Automation &amp; Instrumentation</option>
+              <option>Offshore Wind Electrical Inspection</option>
+              <option>Technical Manpower Supply</option>
+              <option>Commissioning &amp; Start-Up Support</option>
+              <option>Electrical Testing &amp; Calibration</option>
+              <option>Compliance Audit &amp; Inspection Support</option>
+              <option>Other / General Enquiry</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cf-msg">Message <span class="req">*</span></label>
+          <textarea id="cf-msg" name="message" required placeholder="Tell us about your vessel, site or project…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold form-btn" id="cfBtn">
+          <span class="cf-label">Send Message</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+        </button>
+        <p class="form-status" id="cfStatus" role="alert" aria-live="polite"></p>
+        <p class="form-note">We'll respond within 1 business day. Your details are kept confidential.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="site-footer">
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
@@ -586,6 +702,42 @@ if(!reduce && matchMedia('(pointer:fine)').matches){
     ac.style.transform=`perspective(900px) rotateY(${x*7}deg) rotateX(${-y*7}deg)`;
   });
   if(ac)ac.addEventListener('mouseleave',()=>ac.style.transform='');
+}
+
+/* ===== Web3Forms contact submission ===== */
+const cf=document.getElementById('contactForm');
+if(cf){
+  cf.addEventListener('submit',async (e)=>{
+    e.preventDefault();
+    const btn=document.getElementById('cfBtn');
+    const status=document.getElementById('cfStatus');
+    const label=cf.querySelector('.cf-label');
+    if(!cf.checkValidity()){cf.reportValidity();return;}
+    status.className='form-status';
+    const original=label.textContent;
+    btn.disabled=true; label.textContent='Sending…';
+    try{
+      const res=await fetch('https://api.web3forms.com/submit',{
+        method:'POST',
+        headers:{'Accept':'application/json'},
+        body:new FormData(cf)
+      });
+      const data=await res.json();
+      if(data.success){
+        status.textContent='Thank you! Your message has been sent — our team will be in touch shortly.';
+        status.classList.add('show','ok');
+        cf.reset();
+      }else{
+        status.textContent=(data.message||'Something went wrong.')+' Please email us directly at info@rehobothtekserv.com.';
+        status.classList.add('show','err');
+      }
+    }catch(err){
+      status.textContent='Network error — please email us directly at info@rehobothtekserv.com.';
+      status.classList.add('show','err');
+    }finally{
+      btn.disabled=false; label.textContent=original;
+    }
+  });
 }
 
 document.getElementById('yr').textContent=new Date().getFullYear();
