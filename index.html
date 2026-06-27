@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rehoboth Tekserv — Marine, Offshore &amp; Hazardous Area Electrical Inspection &amp; Compliance</title>
+<meta name="description" content="Rehoboth Tekserv delivers marine, offshore and hazardous area (Ex) electrical inspection, testing, commissioning and compliance services. Anchored in excellence — reliable partner, safe operations." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ============================================================
+   REHOBOTH TEKSERV — Brand tokens (extracted from banner)
+   ============================================================ */
+:root{
+  --navy-950:#081735;
+  --navy-900:#0c1f47;
+  --navy-800:#102a5e;
+  --navy-700:#163770;
+  --navy-600:#1d4789;
+  --sea:#2f79c5;
+  --sea-light:#5aa9e6;
+  --sky:#bfe0f5;
+  --gold:#e2a230;
+  --gold-light:#f4c057;
+  --gold-deep:#c8861a;
+  --paper:#f4f8fc;
+  --paper-2:#e9f1f9;
+  --ink:#0b1a3a;
+  --muted:#5b6b86;
+  --white:#ffffff;
+
+  --maxw:1200px;
+  --radius:18px;
+  --shadow-sm:0 4px 14px rgba(12,31,71,.08);
+  --shadow:0 18px 50px rgba(12,31,71,.16);
+  --shadow-gold:0 14px 40px rgba(226,162,48,.32);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.font-head{font-family:'Montserrat',sans-serif;line-height:1.1;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{position:relative}
+
+/* ============ NAVBAR ============ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 32px;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(14px);
+  box-shadow:0 2px 18px rgba(12,31,71,.08);
+  transition:padding .35s var(--ease),box-shadow .35s var(--ease);
+}
+.nav.scrolled{padding:7px 32px;box-shadow:0 6px 26px rgba(12,31,71,.13)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .logo-mark{width:46px;height:46px;object-fit:contain;flex:none;filter:drop-shadow(0 4px 10px rgba(8,23,53,.18))}
+.brand-text{display:flex;flex-direction:column;line-height:1}
+.brand-text b{font-family:'Montserrat';font-weight:900;font-size:1.18rem;letter-spacing:.06em;color:var(--navy-800)}
+.brand-text span{font-family:'Montserrat';font-weight:700;font-size:.62rem;letter-spacing:.42em;color:var(--gold-deep);margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-weight:600;font-size:.92rem;color:var(--navy-800);transition:color .2s;position:relative}
+.nav-links a.btn-gold{color:var(--navy-900)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--gold);transition:width .3s var(--ease)}
+.nav-links a:not(.btn):hover::after{width:100%}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Montserrat';font-weight:700;font-size:.9rem;
+  padding:12px 22px;border-radius:50px;border:none;cursor:pointer;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s;
+}
+.btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy-900);box-shadow:var(--shadow-gold)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 20px 48px rgba(226,162,48,.45)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+.btn-ghost:hover{background:rgba(255,255,255,.22);transform:translateY(-3px)}
+.btn-navy{background:linear-gradient(135deg,var(--navy-700),var(--navy-900));color:#fff;box-shadow:var(--shadow)}
+.btn-navy:hover{transform:translateY(-3px)}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+.menu-toggle span{width:26px;height:2.5px;background:var(--navy-800);border-radius:2px;transition:.3s}
+
+/* ============ HERO BANNER (image used as-is) ============ */
+.hero{position:relative;background:#fff;padding-top:70px;overflow:hidden}
+.banner-img{width:100%;height:auto;display:block}
+
+/* ============ INTRO / CTA BAND (compass retained) ============ */
+.intro{
+  position:relative;overflow:hidden;color:#fff;
+  background:
+    radial-gradient(120% 90% at 82% 6%, #1a4f95 0%, transparent 55%),
+    linear-gradient(160deg,#0c1f47 0%,#102a5e 42%,#16407e 100%);
+  padding:86px 0 92px;
+}
+.compass-bg{
+  position:absolute;top:50%;right:-8%;width:44vw;max-width:560px;opacity:.10;
+  color:#cfe2f6;transform-origin:50% 50%;pointer-events:none;
+  animation:spinC 90s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes spinC{from{transform:translateY(-50%) rotate(0)}to{transform:translateY(-50%) rotate(360deg)}}
+.intro .wrap{position:relative;z-index:5}
+.intro-inner{max-width:790px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(226,162,48,.14);border:1px solid rgba(244,192,87,.4);
+  color:var(--gold-light);font-family:'Montserrat';font-weight:700;
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:8px 16px;border-radius:50px;margin-bottom:22px;
+}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--gold-light);box-shadow:0 0 0 0 rgba(244,192,87,.7);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(244,192,87,.6)}70%{box-shadow:0 0 0 12px rgba(244,192,87,0)}100%{box-shadow:0 0 0 0 rgba(244,192,87,0)}}
+.intro h1{font-weight:900;color:#fff;font-size:clamp(2.1rem,4.6vw,3.7rem);margin-bottom:10px}
+.intro h1 .gold{background:linear-gradient(120deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.intro .tagline{font-family:'Montserrat';font-style:italic;font-weight:600;color:var(--sky);font-size:clamp(1rem,1.7vw,1.3rem);letter-spacing:.02em;margin-bottom:22px}
+.intro p.lead{color:#d4e3f4;font-size:1.06rem;max-width:610px;margin-bottom:34px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.hero-pills{display:flex;gap:34px;margin-top:44px;flex-wrap:wrap}
+.hero-pill{display:flex;flex-direction:column}
+.hero-pill b{font-family:'Montserrat';font-weight:800;color:var(--gold-light);font-size:1.7rem;line-height:1}
+.hero-pill span{color:#aac4e2;font-size:.82rem;margin-top:4px}
+
+/* ============ CAPABILITY STRIP (from banner badges) ============ */
+.caps{background:linear-gradient(180deg,var(--navy-900),var(--navy-800));position:relative;z-index:10;margin-top:-2px}
+.caps .wrap{padding:38px 24px}
+.caps-row{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cap{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:14px 8px;border-right:1px solid rgba(255,255,255,.08);transition:transform .3s var(--ease)}
+.cap:last-child{border-right:none}
+.cap:hover{transform:translateY(-6px)}
+.cap .ic{width:40px;height:40px;color:var(--gold-light);transition:transform .4s var(--ease)}
+.cap:hover .ic{transform:scale(1.15) rotate(-6deg)}
+.cap span{color:#cdddef;font-family:'Montserrat';font-weight:700;font-size:.7rem;letter-spacing:.04em;line-height:1.35;text-transform:uppercase}
+
+/* ============ SECTION SHELL ============ */
+.sec{padding:110px 0}
+.sec-head{max-width:720px;margin:0 auto 60px;text-align:center}
+.kicker{display:inline-block;font-family:'Montserrat';font-weight:800;font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:16px;position:relative;padding-bottom:12px}
+.kicker::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:46px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+.sec h2{font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:800;color:var(--navy-900)}
+.sec h2 .gold{color:var(--gold-deep)}
+.sec-head p{color:var(--muted);font-size:1.06rem;margin-top:16px}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ ABOUT ============ */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-copy h2{font-size:clamp(1.8rem,3.4vw,2.7rem);color:var(--navy-900);margin-bottom:20px}
+.about-copy p{color:var(--muted);font-size:1.05rem;margin-bottom:18px}
+.about-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.about-list li{list-style:none;display:flex;gap:10px;align-items:flex-start;color:var(--navy-800);font-weight:600;font-size:.96rem}
+.about-list .tick{flex:none;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));display:grid;place-items:center;color:var(--navy-900);margin-top:2px}
+.about-visual{position:relative;perspective:1200px}
+.about-card{
+  position:relative;border-radius:24px;overflow:hidden;
+  background:linear-gradient(160deg,var(--navy-800),var(--navy-950));
+  padding:46px 38px;color:#fff;box-shadow:var(--shadow);
+  transform-style:preserve-3d;transition:transform .3s var(--ease);
+}
+.about-card .ring{position:absolute;right:-60px;top:-60px;width:240px;height:240px;border:2px dashed rgba(244,192,87,.35);border-radius:50%;animation:spin 40s linear infinite}
+.about-card h3{font-size:1.5rem;margin-bottom:12px}
+.about-card .quote{font-family:'Montserrat';font-style:italic;font-weight:600;color:var(--gold-light);font-size:1.25rem;margin:20px 0}
+.about-card p{color:#cbdcef;position:relative;z-index:2}
+.about-badges{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.about-badges span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:50px;padding:7px 14px;font-size:.78rem;font-weight:600;color:#dcebff}
+
+/* ============ SERVICES ============ */
+.services{background:linear-gradient(180deg,#eef4fb,#ffffff)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.svc{
+  position:relative;background:#fff;border-radius:var(--radius);
+  padding:30px 26px;box-shadow:var(--shadow-sm);
+  border:1px solid #e4edf7;overflow:hidden;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease);
+  transform-style:preserve-3d;will-change:transform;
+}
+.svc::before{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:linear-gradient(90deg,var(--gold),var(--sea));transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.svc:hover::before{transform:scaleX(1)}
+.svc:hover{box-shadow:var(--shadow);border-color:#cfe0f2}
+.svc .glow{position:absolute;right:-40px;bottom:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(47,121,197,.14),transparent 70%);opacity:0;transition:opacity .4s}
+.svc:hover .glow{opacity:1}
+.svc-ic{
+  width:58px;height:58px;border-radius:14px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--navy-700),var(--navy-900));
+  color:var(--gold-light);margin-bottom:18px;transition:transform .4s var(--ease);
+  box-shadow:0 10px 24px rgba(12,31,71,.22);transform:translateZ(40px);
+}
+.svc:hover .svc-ic{transform:translateZ(60px) rotateY(-12deg) scale(1.05)}
+.svc-ic svg{width:30px;height:30px}
+.svc h3{font-size:1.12rem;color:var(--navy-900);margin-bottom:10px;transform:translateZ(24px)}
+.svc p{color:var(--muted);font-size:.93rem;transform:translateZ(14px)}
+.svc .more{display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--gold-deep);font-weight:700;font-size:.86rem;font-family:'Montserrat'}
+.svc .more svg{width:16px;height:16px;transition:transform .3s}
+.svc:hover .more svg{transform:translateX(5px)}
+
+/* ============ INDUSTRIES (3D conveyor) ============ */
+.industries{background:linear-gradient(165deg,var(--navy-900),var(--navy-800));color:#fff;overflow:hidden}
+.industries .kicker{color:var(--gold-light)}
+.industries .kicker::after{background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+.industries h2{color:#fff}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.ind{
+  text-align:center;padding:34px 16px;border-radius:16px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+  transition:transform .4s var(--ease),background .4s;
+}
+.ind:hover{transform:translateY(-10px);background:rgba(226,162,48,.12);border-color:rgba(244,192,87,.4)}
+.ind .ic{width:50px;height:50px;margin:0 auto 16px;color:var(--gold-light)}
+.ind b{display:block;font-family:'Montserrat';font-weight:700;font-size:1rem}
+.ind span{color:#a9c3e2;font-size:.82rem}
+
+/* ============ WHY / STATS ============ */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.feat{display:flex;gap:18px;margin-bottom:28px}
+.feat .fic{flex:none;width:54px;height:54px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#eaf2fb,#dbe9f8);color:var(--navy-700);box-shadow:inset 0 0 0 1px #d3e3f5}
+.feat .fic svg{width:28px;height:28px}
+.feat h4{font-size:1.1rem;color:var(--navy-900);margin-bottom:4px}
+.feat p{color:var(--muted);font-size:.95rem}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.stat{
+  background:linear-gradient(160deg,#fff,#f1f6fc);border:1px solid #e2ecf7;
+  border-radius:18px;padding:30px 24px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;
+}
+.stat::after{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(226,162,48,.16),transparent 70%)}
+.stat b{font-family:'Montserrat';font-weight:900;font-size:2.6rem;color:var(--navy-900);line-height:1;display:block}
+.stat b .gold{color:var(--gold-deep)}
+.stat span{color:var(--muted);font-size:.9rem;font-weight:600;margin-top:8px;display:block}
+
+/* ============ CTA ============ */
+.cta-band{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy-800),var(--navy-950));color:#fff;border-radius:28px;padding:64px 48px;text-align:center;box-shadow:var(--shadow)}
+.cta-band .ring{position:absolute;border:2px dashed rgba(244,192,87,.22);border-radius:50%}
+.cta-band .r1{width:360px;height:360px;left:-120px;top:-120px;animation:spin 50s linear infinite}
+.cta-band .r2{width:240px;height:240px;right:-80px;bottom:-100px;animation:spin 38s linear infinite reverse}
+.cta-band h2{font-size:clamp(1.8rem,3.4vw,2.6rem);position:relative;z-index:2;color:#fff}
+.cta-band p{color:#cdddef;max-width:560px;margin:16px auto 30px;position:relative;z-index:2}
+.cta-band .hero-cta{justify-content:center;position:relative;z-index:2}
+
+/* ============ CONTACT / FOOTER ============ */
+.footer{background:var(--navy-950);color:#cdddef;padding:70px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:46px;border-bottom:1px solid rgba(255,255,255,.08)}
+.foot-brand .brand-text b{color:#fff}
+.foot-brand p{margin-top:18px;font-size:.92rem;color:#9fb8d6;max-width:300px}
+.foot-col h5{font-family:'Montserrat';font-weight:700;color:#fff;font-size:.95rem;margin-bottom:18px;letter-spacing:.04em}
+.foot-col a,.foot-col li{display:block;list-style:none;color:#a7bfdc;font-size:.9rem;margin-bottom:11px;transition:color .2s}
+.foot-col a:hover{color:var(--gold-light)}
+.foot-contact li{display:flex;gap:10px;align-items:flex-start}
+.foot-contact svg{width:18px;height:18px;color:var(--gold-light);flex:none;margin-top:3px}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:.82rem;color:#7e98ba;flex-wrap:wrap;gap:10px}
+.foot-bottom .tag{font-family:'Montserrat';font-style:italic;color:var(--gold-light)}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;padding-top:130px;padding-bottom:240px}
+  .scene{display:none}
+  .caps-row{grid-template-columns:repeat(4,1fr);gap:14px}
+  .cap{border-right:none}
+  .about-grid,.why-grid{grid-template-columns:1fr;gap:40px}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .ind-grid{grid-template-columns:repeat(3,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .nav{padding:14px 18px}
+  .nav-links{position:fixed;inset:0 0 0 30%;flex-direction:column;justify-content:center;gap:26px;background:rgba(8,23,53,.97);backdrop-filter:blur(12px);transform:translateX(100%);transition:transform .4s var(--ease)}
+  .nav-links.open{transform:none}
+  .nav-links a{color:#fff;font-size:1.1rem}
+  .menu-toggle{display:flex}
+  .caps-row{grid-template-columns:repeat(2,1fr)}
+  .svc-grid{grid-template-columns:1fr}
+  .ind-grid{grid-template-columns:repeat(2,1fr)}
+  .about-list{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .cta-band{padding:46px 24px}
+  .sec{padding:80px 0}
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;transition:none !important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Rehoboth Tekserv home">
+    <img class="logo-mark" src="assets/emblem.png" alt="Rehoboth Tekserv logo" />
+    <span class="brand-text"><b>REHOBOTH</b><span>T E K S E R V</span></span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#industries">Industries</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact" class="btn btn-gold">Get in Touch</a>
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ============ HERO BANNER (used as-is) ============ -->
+<header class="hero" id="top">
+  <img class="banner-img" src="assets/banner.png" fetchpriority="high"
+       alt="Rehoboth Tekserv — Marine, Offshore &amp; Hazardous Area Electrical Inspection and Compliance Services" />
+</header>
+
+<!-- ============ INTRO / CTA BAND (compass retained) ============ -->
+<section class="intro">
+  <svg class="compass-bg" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+    <circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="74"/><circle cx="100" cy="100" r="6" fill="currentColor"/>
+    <path d="M100 6 L112 100 L100 194 L88 100 Z" fill="currentColor" opacity=".5"/>
+    <path d="M6 100 L100 112 L194 100 L100 88 Z" fill="currentColor" opacity=".25"/>
+    <g font-family="Montserrat" font-size="9" fill="currentColor" text-anchor="middle">
+      <text x="100" y="24">N</text><text x="180" y="103">E</text><text x="100" y="186">S</text><text x="22" y="103">W</text>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="intro-inner">
+      <span class="eyebrow"><span class="dot"></span> Reliable Partner · Safe Operations · Complete Compliance</span>
+      <h1>Anchored in <span class="gold">Excellence.</span></h1>
+      <p class="tagline">Marine, Offshore &amp; Hazardous Area Electrical Inspection &amp; Compliance Services</p>
+      <p class="lead">From switchboards to substations, CompEx-certified installations to offshore wind — Rehoboth Tekserv keeps your electrical systems reliable, safe and fully compliant across the marine and energy sectors.</p>
+      <div class="hero-cta">
+        <a href="#services" class="btn btn-gold">Explore Services
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Request an Inspection</a>
+      </div>
+      <div class="hero-pills">
+        <div class="hero-pill"><b>9+</b><span>Specialist Services</span></div>
+        <div class="hero-pill"><b>CompEx</b><span>Certified Inspections</span></div>
+        <div class="hero-pill"><b>24/7</b><span>Technical Support</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec" id="about">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <span class="kicker">Who We Are</span>
+      <h2>Your trusted partner for <span style="color:var(--gold-deep)">electrical integrity</span> at sea and offshore</h2>
+      <p>Rehoboth Tekserv specialises in marine, offshore and hazardous-area electrical inspection, testing, commissioning and compliance. We help vessel owners, operators and project teams keep critical electrical systems reliable, safe and fully aligned with international standards.</p>
+      <p>From routine troubleshooting to Ex-equipment verification and full classification-society readiness, our qualified engineers deliver dependable workmanship and clear, audit-ready documentation — every time.</p>
+      <ul class="about-list">
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-11"/></svg></span> Standards-compliant reporting</li>
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-11"/></svg></span> CompEx-certified competence</li>
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-11"/></svg></span> Minimised downtime</li>
+        <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-11"/></svg></span> Global mobilisation</li>
+      </ul>
+    </div>
+    <div class="about-visual reveal">
+      <div class="about-card" id="aboutCard">
+        <div class="ring"></div>
+        <h3>Anchored in Excellence</h3>
+        <p class="quote">"Reliable Partner. Safe Operations. Complete Compliance."</p>
+        <p>Every inspection we carry out is built on safety-first discipline, technical precision and a deep respect for the maritime and energy environments our clients operate in.</p>
+        <div class="about-badges">
+          <span>Marine</span><span>Offshore</span><span>Oil &amp; Gas</span><span>Offshore Wind</span><span>Petrochemical</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec services" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">What We Do</span>
+      <h2>Our <span class="gold">Services</span></h2>
+      <p>A complete suite of electrical inspection, testing, commissioning and compliance services for the marine, offshore and industrial sectors.</p>
+    </div>
+    <div class="svc-grid" id="svcGrid">
+      <!-- cards injected by JS for tidy markup -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ INDUSTRIES ============ -->
+<section class="sec industries" id="industries">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Sectors We Serve</span>
+      <h2>Industries We Support</h2>
+      <p style="color:#a9c3e2">Specialist electrical expertise across the most demanding marine and energy environments.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l9-4 9 4M5 17v-5l7-3 7 3v5M12 4v5"/></svg><b>Marine</b><span>Vessels &amp; fleets</span></div>
+      <div class="ind reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V9l8-5 8 5v12M9 21v-6h6v6M4 9h16"/></svg><b>Offshore</b><span>Platforms &amp; rigs</span></div>
+      <div class="ind reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 21V8l5-3 5 3v13M15 21V12l4-2v11M8 11h2M8 14h2M8 17h2"/></svg><b>Oil &amp; Gas</b><span>Upstream &amp; downstream</span></div>
+      <div class="ind reveal"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V10l4-2v13M8 21V6l6-3v18M14 21v-9l6 3v6M3 21h18"/></svg><b>Petrochemical</b><span>Process plants</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US + STATS ============ -->
+<section class="sec" id="why">
+  <div class="wrap why-grid">
+    <div class="reveal">
+      <span class="kicker">Why Rehoboth</span>
+      <h2 style="font-size:clamp(1.8rem,3.4vw,2.7rem);color:var(--navy-900);margin-bottom:30px">Built on safety, precision &amp; compliance</h2>
+      <div class="feat">
+        <div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div><h4>Compliance-First Approach</h4><p>Audit-ready reporting aligned with classification society, flag and port state requirements.</p></div>
+      </div>
+      <div class="feat">
+        <div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l9 16H3z"/><path d="M9 11l2 3 2-4 2 3"/></svg></div>
+        <div><h4>Ex / Hazardous Area Expertise</h4><p>Specialist competence in Ex-certified installations across marine, oil &amp; gas and petrochemical sites.</p></div>
+      </div>
+      <div class="feat">
+        <div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div><h4>Minimised Downtime</h4><p>Efficient mobilisation and troubleshooting that keeps your assets operational and on schedule.</p></div>
+      </div>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><b data-count="9">0</b><span>Specialist service lines</span></div>
+      <div class="stat"><b><span class="gold" data-count="100">0</span>%</b><span>Compliance focused</span></div>
+      <div class="stat"><b data-count="24">0</b><span>Hour technical support</span></div>
+      <div class="stat"><b><span class="gold">CompEx</span></b><span>Certified inspections</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div class="ring r1"></div><div class="ring r2"></div>
+      <h2>Ready to keep your operations <span style="color:var(--gold-light)">safe &amp; compliant?</span></h2>
+      <p>Talk to our team about inspection, testing, commissioning or compliance support for your next project or vessel.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-gold">Get in Touch
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#services" class="btn btn-ghost">View All Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER / CONTACT ============ -->
+<footer class="footer" id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand">
+          <img class="logo-mark" style="width:54px;height:54px;object-fit:contain" src="assets/emblem.png" alt="Rehoboth Tekserv logo" />
+          <span class="brand-text"><b>REHOBOTH</b><span>T E K S E R V</span></span>
+        </a>
+        <p>Marine, offshore &amp; hazardous area electrical inspection and compliance services. Anchored in excellence.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <a href="#services">Marine Electrical Inspection</a>
+        <a href="#services">Hazardous Area (Ex)</a>
+        <a href="#services">BWTS Support</a>
+        <a href="#services">Automation &amp; Instrumentation</a>
+        <a href="#services">Testing &amp; Calibration</a>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="#about">About Us</a>
+        <a href="#industries">Industries</a>
+        <a href="#why">Why Choose Us</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col foot-contact">
+        <h5>Get in Touch</h5>
+        <ul style="padding:0">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg> <a href="mailto:info@rehobothtekserv.com">info@rehobothtekserv.com</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> <span><a href="tel:+919444842052">+91 94448 42052</a><br><a href="tel:+919940197661">+91 99401 97661</a></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> <span>Available globally — manpower deployed wherever you operate</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Rehoboth Tekserv. All rights reserved.</span>
+      <span class="tag">Reliable Partner · Safe Operations · Complete Compliance</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== Services data (from supplied content) ===== */
+const SERVICES = [
+ {t:"Marine Electrical Inspection & Troubleshooting",
+  d:"Comprehensive inspection, testing, commissioning and troubleshooting for switchboards, motors, transformers, power distribution, cables and lighting — keeping vessels reliable and compliant.",
+  ic:'<circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/><path d="M11 8v6M8 11h6"/>'},
+ {t:"Hazardous Area (Ex) Inspection",
+  d:"Specialist inspection of Ex-certified installations across marine, offshore, oil & gas and petrochemical sites — equipment integrity, cable glands, junction boxes and detailed reporting.",
+  ic:'<path d="M12 3l9 16H3z"/><path d="M9 11l2 3 2-4 2 3"/>'},
+ {t:"BWTS Service, Maintenance & Compliance",
+  d:"Commissioning, operational testing, preventive maintenance, calibration and performance verification for Ballast Water Treatment Systems — ensuring regulatory compliance and uptime.",
+  ic:'<path d="M12 3s6 6 6 11a6 6 0 0 1-12 0c0-5 6-11 6-11z"/><path d="M9 13a3 3 0 0 0 6 0"/>'},
+ {t:"Marine Automation & Instrumentation",
+  d:"Inspection, calibration, commissioning and maintenance of sensors, transmitters, PLCs, control systems, alarm monitoring and integrated vessel automation solutions.",
+  ic:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/>'},
+ {t:"Offshore Wind Electrical Inspection",
+  d:"Electrical inspection, QA, commissioning support, testing verification and compliance for installations, cable systems, substations and infrastructure across the project lifecycle.",
+  ic:'<path d="M12 22V10M12 10l-7 4M12 10l7 4M12 10V3"/><circle cx="12" cy="10" r="1.4"/>'},
+ {t:"Technical Manpower Supply",
+  d:"Qualified, experienced personnel for marine, offshore, industrial and energy projects — sourcing, screening, mobilisation and deployment for inspection, commissioning and QC.",
+  ic:'<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3 2.5-5 6-5s6 2 6 5M15 20c0-2 .8-3.4 2-4"/>'},
+ {t:"Commissioning & Start-Up Support",
+  d:"Pre-commissioning inspections, functional testing, system verification, performance validation and operational readiness for electrical, automation and instrumentation systems.",
+  ic:'<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>'},
+ {t:"Electrical Testing & Calibration",
+  d:"Insulation resistance, continuity and earth-fault testing, instrument calibration and performance assessments — with technical reporting for safe, reliable operations.",
+  ic:'<path d="M3 12h4l2-7 4 14 2-7h6"/>'},
+ {t:"Compliance Audit & Inspection Support",
+  d:"Preparation for regulatory, classification society, flag and port state inspections — documentation review, gap analysis, corrective actions and on-site audit support.",
+  ic:'<path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/>'},
+];
+const grid=document.getElementById('svcGrid');
+SERVICES.forEach(s=>{
+  const el=document.createElement('article');
+  el.className='svc reveal tilt';
+  el.innerHTML=`<div class="glow"></div>
+    <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">${s.ic}</svg></div>
+    <h3>${s.t}</h3><p>${s.d}</p>
+    <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>`;
+  grid.appendChild(el);
+});
+
+/* ===== Navbar scroll state ===== */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+
+/* ===== Mobile menu ===== */
+const mt=document.getElementById('menuToggle'),nl=document.getElementById('navLinks');
+mt.addEventListener('click',()=>nl.classList.toggle('open'));
+nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nl.classList.remove('open')));
+
+/* ===== Reveal on scroll ===== */
+const io=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*60);io.unobserve(e.target)}})},{threshold:.14});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ===== Count-up stats ===== */
+const counted=new WeakSet();
+const cio=new IntersectionObserver((es)=>{es.forEach(e=>{
+  if(e.isIntersecting && !counted.has(e.target)){counted.add(e.target);
+    const end=+e.target.dataset.count;let t0=null;
+    const step=(t)=>{if(!t0)t0=t;const p=Math.min((t-t0)/1100,1);
+      e.target.textContent=Math.round((1-Math.pow(1-p,3))*end);
+      if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step);
+  }})},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+/* ===== 3D tilt on service cards (respects reduced motion + pointer) ===== */
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduce && matchMedia('(pointer:fine)').matches){
+  document.querySelectorAll('.tilt').forEach(card=>{
+    card.addEventListener('mousemove',ev=>{
+      const r=card.getBoundingClientRect();
+      const x=(ev.clientX-r.left)/r.width-.5, y=(ev.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(800px) rotateY(${x*9}deg) rotateX(${-y*9}deg) translateY(-6px)`;
+    });
+    card.addEventListener('mouseleave',()=>card.style.transform='');
+  });
+
+  /* hero parallax */
+  const scene=document.getElementById('scene');
+  addEventListener('mousemove',ev=>{
+    const x=(ev.clientX/innerWidth-.5), y=(ev.clientY/innerHeight-.5);
+    if(scene)scene.style.transform=`rotateY(${x*8}deg) rotateX(${-y*6}deg)`;
+  });
+
+  /* about card tilt */
+  const ac=document.getElementById('aboutCard');
+  if(ac)ac.addEventListener('mousemove',ev=>{
+    const r=ac.getBoundingClientRect();
+    const x=(ev.clientX-r.left)/r.width-.5,y=(ev.clientY-r.top)/r.height-.5;
+    ac.style.transform=`perspective(900px) rotateY(${x*7}deg) rotateX(${-y*7}deg)`;
+  });
+  if(ac)ac.addEventListener('mouseleave',()=>ac.style.transform='');
+}
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
